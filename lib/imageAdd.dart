@@ -41,21 +41,23 @@ class _AvengersState extends State<Avengers> {
           child: Column(mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(image[index].images),
-              Text(image[index].name, style: TextStyle(fontSize: 20,fontWeight: FontWeight.normal),),
-              Column(
-                //mainAxisAlignment: MainAxisAlignment.end,
-                //crossAxisAlignment: CrossAxisAlignment.end,
+              Row(
                 children: [
-                  Row(
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    //crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(image[index].abilities)
-                    ],
-                  ),
+                  Image.asset(image[index].images),
+                  Container(
+
+                      padding:EdgeInsets.all(15),
+                      child:
+                      Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(image[index].abilities,style: TextStyle(fontSize: 14),),
+                        ],
+                      ))
                 ],
-              )
+              ),
+              Text(image[index].name, style: TextStyle(fontSize: 20,fontWeight: FontWeight.normal),),
+
             ],
           ),
 
